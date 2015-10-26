@@ -231,6 +231,7 @@
           if (!filter.hasOwnProperty(n)) continue;
           var fV = filter[n];
           if (this.isFunction(fV)) {
+            if (!dataObj.hasOwn(n)) return false;
             if (fV(dataObj[n])) {
               if (typeof b_match == "undefined") b_match = true;
             } else {
